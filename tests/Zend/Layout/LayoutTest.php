@@ -20,6 +20,8 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Test class for Zend_Layout.
@@ -29,8 +31,8 @@
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Layout
  */
+#[Group('Zend_Layout')]
 class Zend_Layout_LayoutTest extends PHPUnit\Framework\TestCase
 {
     /**
@@ -496,9 +498,7 @@ class Zend_Layout_LayoutTest extends PHPUnit\Framework\TestCase
         $this->assertNull(Zend_Layout::getMvcInstance());
     }
 
-    /**
-     * @doesNotPerformAssertions
-     */
+    #[DoesNotPerformAssertions]
     public function testMinimalViewObjectWorks()
     {
         require_once dirname(__FILE__) . '/_files/MinimalCustomView.php';
@@ -509,9 +509,7 @@ class Zend_Layout_LayoutTest extends PHPUnit\Framework\TestCase
         $layout->render();
     }
 
-    /**
-     * @group ZF-5152
-     */
+    #[Group('ZF-5152')]
     public function testCallingStartMvcTwiceDoesntGenerateAnyUnexpectedBehavior()
     {
         Zend_Layout::startMvc('/some/path');
@@ -521,9 +519,7 @@ class Zend_Layout_LayoutTest extends PHPUnit\Framework\TestCase
         $this->assertTrue(Zend_Layout::getMvcInstance()->isEnabled());
     }
 
-    /**
-     * @group ZF-5891
-     */
+    #[Group('ZF-5891')]
     public function testSetLayoutWithDisabledFlag()
     {
         $layout = new Zend_Layout();

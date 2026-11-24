@@ -20,6 +20,8 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
+
 if (defined('TESTS_ZEND_LAYOUT_ZF1_FULL_SUITE') && TESTS_ZEND_LAYOUT_ZF1_FULL_SUITE === true) {
 
     /**
@@ -28,8 +30,8 @@ if (defined('TESTS_ZEND_LAYOUT_ZF1_FULL_SUITE') && TESTS_ZEND_LAYOUT_ZF1_FULL_SU
      * @subpackage UnitTests
      * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
      * @license    http://framework.zend.com/license/new-bsd     New BSD License
-     * @group      Zend_Layout
      */
+    #[Group('Zend_Layout')]
     class Zend_Layout_FunctionalTest extends Zend_Test_PHPUnit_ControllerTestCase
     {
         public function setUp(): void

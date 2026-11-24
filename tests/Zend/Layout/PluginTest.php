@@ -20,6 +20,7 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * Test class for Zend_Layout_Controller_Plugin_Layout
@@ -29,8 +30,8 @@
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Layout
  */
+#[Group('Zend_Layout')]
 class Zend_Layout_PluginTest extends PHPUnit\Framework\TestCase
 {
     /**
@@ -175,9 +176,7 @@ class Zend_Layout_PluginTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString('Site Layout', $body);
     }
 
-    /**
-     * @group ZF-8041
-     */
+    #[Group('ZF-8041')]
     public function testPostDispatchDoesNotRenderLayoutWhenResponseRedirected()
     {
         $front    = Zend_Controller_Front::getInstance();
