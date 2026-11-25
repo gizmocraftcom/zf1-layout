@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Development
+
+- `composer test` runs `phpunit` without a path, so the `exclude` in `phpunit.xml.dist` applies. Passing `./tests` bypassed it, and CI tried to run `FunctionalTest.php`, which needs `Zend_Test`.
+
 ## 2.0.0
 
 Fork of `diablomedia/zendframework1-layout`, published as `gizmocraft/zendframework1-layout`.
